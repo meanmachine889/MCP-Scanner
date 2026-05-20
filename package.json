@@ -1,0 +1,45 @@
+{
+  "name": "scan-my-mcp",
+  "version": "0.1.0",
+  "description": "Security scanner for MCP servers",
+  "main": "dist/cli.js",
+  "types": "dist/types.d.ts",
+  "bin": { "scan-my-mcp": "./dist/cli.js" },
+  "exports": {
+    ".": { "default": "./dist/cli.js" },
+    "./scanner": { "types": "./dist/scanner.d.ts", "default": "./dist/scanner.js" },
+    "./types": { "types": "./dist/types.d.ts", "default": "./dist/types.js" }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/cli.ts",
+    "start": "node dist/cli.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["mcp", "security", "scanner", "ai", "agents"],
+  "license": "MIT",
+  "author": "meanmachine889",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meanmachine889/MCP-Scanner.git"
+  },
+  "homepage": "https://github.com/meanmachine889/MCP-Scanner#readme",
+  "bugs": {
+    "url": "https://github.com/meanmachine889/MCP-Scanner/issues"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "axios": "^1.16.1",
+    "chalk": "^4.1.2",
+    "commander": "^14.0.3",
+    "uuid": "^14.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.0",
+    "@types/uuid": "^10.0.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.22.2",
+    "typescript": "^6.0.3"
+  }
+}
