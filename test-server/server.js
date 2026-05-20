@@ -262,8 +262,9 @@ const server = http.createServer((req, res) => {
     });
 });
 
-server.listen(PORT, () => {
-    console.log(`Vulnerable test MCP server listening on http://localhost:${PORT}/mcp`);
+// Bind to loopback only so this never accidentally faces the network.
+server.listen(PORT, "127.0.0.1", () => {
+    console.log(`Vulnerable test MCP server listening on http://127.0.0.1:${PORT}/mcp`);
     console.log(`Session ID: ${SESSION_ID}`);
     console.log(`Press Ctrl+C to stop.`);
 });
